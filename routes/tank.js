@@ -4,7 +4,7 @@ const multer = require("multer");
 const mongoose = require("mongoose");
 var Tank = require("../db/models/tank");
 const mongo = require("mongodb").MongoClient
-const url = "mongodb+srv://Oildb:seniorproject2@fsrs-cluster.0flfd.mongodb.net/test?retryWrites=true&w=majority";let  TL
+const url = process.env.MONGODBS_URI ;let  TL
 
 /* GET news listing. */
 let db
