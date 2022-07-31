@@ -20,9 +20,9 @@ mongo.connect(
       return
     }
 router.get("/", (req, res, next) => {
-   db = client.db("Tank")
+   db = client.db("TL")
 
-  db.collection("Tank")
+  db.collection("TL")
     .find({}).limit(50)
     .toArray(function (err, result) {
       if (err) {
