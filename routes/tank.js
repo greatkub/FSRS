@@ -23,7 +23,7 @@ router.get("/", (req, res, next) => {
    db = client.db("TL")
 
   db.collection("TL")
-    .find({}).limit(50)
+    .find({})
     .toArray(function (err, result) {
       if (err) {
         res.status(400).send("Error fetching listings!");
