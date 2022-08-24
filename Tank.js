@@ -27,7 +27,7 @@ async function VeederRoot() {
        const date = Date.now();
        const browser = await puppeteer.launch({
         headless: true,
-        slowMo: 50,
+        // slowMo: 50,
         product: 'firefox',
         ignoreHTTPSErrors: true,
         args: ['--ignore-certificate-errors', '--ignore-certificate-errors-spki-list', '--enable-features=NetworkService', '--no-sandbox',
