@@ -34,25 +34,18 @@ router.get("/", (req, res, next) => {
     });
   })
   router.delete("/:id", (req, res, next) => {
-    const id = req.params['id']
-    db = client.db("Tank")
-  
+     const id = req.params.id
+  db = client.db("TL")
 
-    db.collection("Tank").deleteOne(id, function(err, obj) {
-      if (err) throw err;
-      console.log("1 document deleted");
-      db.close();
-    });
-    // console.log("Delete this news", id)
-    // console.debug("Movie to delete", id);
-    // Movie.findByIdAndDelete(id, (err, doc) => {
-    //   if (err) {
-    //     console.error("Hey look, Error!", err);
-    //     res.json(err);
-    //   } else {
-    //     res.status(200).json(doc);
-    //   }
-    // });
+  // var collection = db.collection('Tank')
+  // collection.deleteOne({_id: new mongo.ObjectId(id)}, function(err, obj) {
+  //   if (err) throw err;
+  //   console.log("1 document deleted");
+  // })
+  db.collection("TL").deleteOne({"_id":ObjectID(id)}, function(err, obj) {
+    if (err) throw err;
+    console.log("1 document deleted");
+    res.json(obj);
   });
 
 });
